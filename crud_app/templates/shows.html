@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shown</title>
+</head>
+<body>
+    <button><a href="/">add new</a></button>
+    <div>
+        <table>
+            <tr>
+            <th>user id</th>
+            <th>user Name</th>
+            <th>user email</th>
+            <th>user password</th>
+            <th>delete</th>
+            <th> Edit</th>
+            </tr>
+            
+                {% for i in users %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.uname}}</td>
+                    <td>{{i.uemail}}</td>
+                    <td>{{i.upassword}}</td>
+                    <td><a href="/delete/{{i.id}}">Delete</a></td>
+                    <td><a href="/edit/{{i.id}}">Edit</a></td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+</body>
+</html>
